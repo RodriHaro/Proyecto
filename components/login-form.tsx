@@ -66,7 +66,7 @@ export function LoginForm({ className, ...props }: React.HTMLAttributes<HTMLDivE
                 </div>
                 <div className="text-center text-sm">
                   ¿Aún no tienes una cuenta?{" "}
-                  <a href="#" className="underline underline-offset-4">
+                  <a href="/register" className="underline underline-offset-4">
                     Regístrate
                   </a>
                 </div>

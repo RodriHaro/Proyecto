@@ -33,8 +33,8 @@ export default function Home() {
         <CategorySection />
         </div>
         {/* Lo que dicen nuestros clientes */}
-        <div className="container px-4 mt-12 mb-8 pb-0">
-          <h2 className="text-3xl font-bold text-center">Lo que dicen nuestros clientes</h2>
+        <div className="container px-4 mt-12 mb-16 pb-0">
+          <h2 className="text-3xl font-bold text-center mb-16">Lo que dicen nuestros clientes</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
@@ -42,23 +42,31 @@ export default function Home() {
                   "El servicio de mantenimiento es excelente. Mis lentes quedaron como nuevos y el personal fue muy amable y profesional.",
                 author: "María Rodríguez",
                 role: "Cliente desde 2018",
+                image: "/placeholder.svg",
               },
               {
                 quote:
                   "La adaptación de mis lentes de contacto fue perfecta. El optometrista fue muy paciente explicándome todo el proceso de cuidado.",
                 author: "Carlos Méndez",
                 role: "Cliente desde 2020",
+                image: "/placeholder.svg",
               },
               {
                 quote:
                   "El taller de armado hizo un trabajo impecable con mis lentes. La precisión y rapidez del servicio superaron mis expectativas.",
                 author: "Laura Sánchez",
                 role: "Cliente desde 2019",
+                image: "/placeholder.svg",
               },
             ].map((testimonial, index) => (
               <Card key={index} className="bg-muted">
-                <CardContent className="pt-6">
+                <CardContent className="pt-6 relative">
                   <div className="mb-4 text-4xl text-primary">"</div>
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.author}
+                    className="absolute top-4 right-4 h-12 w-12 rounded-full object-cover border border-muted"
+                  />
                   <p className="italic mb-6">{testimonial.quote}</p>
                   <div>
                     <p className="font-bold">{testimonial.author}</p>

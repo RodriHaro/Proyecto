@@ -178,8 +178,8 @@ export default function CheckoutPage() {
                 <Tabs defaultValue="card">
                   <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="card">Tarjeta de crédito</TabsTrigger>
-                    <TabsTrigger value="paypal">PayPal</TabsTrigger>
-                    <TabsTrigger value="cod">Pago contra entrega</TabsTrigger>
+                    <TabsTrigger value="paypal">Mercado Pago</TabsTrigger>
+                    <TabsTrigger value="transfer">Transferencia bancaria</TabsTrigger>
                   </TabsList>
                   <TabsContent value="card" className="space-y-4 pt-4">
                     <div className="space-y-2">
@@ -206,36 +206,48 @@ export default function CheckoutPage() {
                   </TabsContent>
                   <TabsContent value="paypal" className="pt-4">
                     <div className="flex flex-col items-center justify-center py-8 text-center">
-                      <p className="mb-4">Serás redirigido a PayPal para completar tu compra de forma segura.</p>
+                      <p className="mb-4">Serás redirigido a Mercado Pago para completar tu compra de forma segura.</p>
                       <Button type="button" className="w-full">
-                        Continuar con PayPal
+                      Continuar con Mercado Pago
                       </Button>
                     </div>
                   </TabsContent>
-                  <TabsContent value="cod" className="pt-4">
+                  <TabsContent value="transfer" className="pt-4">
                     <div className="flex flex-col space-y-4">
                       <div className="bg-muted p-4 rounded-lg">
-                        <h3 className="font-medium mb-2">Pago contra entrega</h3>
+                        <h3 className="font-medium mb-2">Transferencia bancaria</h3>
                         <p className="text-sm text-muted-foreground">
-                          Paga en efectivo cuando tu pedido sea entregado en tu domicilio. Puede aplicarse una pequeña tarifa por este servicio.
+                          Realiza una transferencia a nuestra cuenta bancaria. Tu pedido será procesado una vez que se
+                          confirme el pago.
                         </p>
+                      </div>
+                      <div className="bg-muted p-4 rounded-lg">
+                        <h3 className="font-medium mb-2">Datos bancarios:</h3>
+                        <div className="space-y-1 text-sm">
+                          <p>
+                            <span className="font-medium">Banco:</span> Banco Galicia
+                          </p>
+                          <p>
+                            <span className="font-medium">Titular:</span> Óptica RH S.A.
+                          </p>
+                          <p>
+                            <span className="font-medium">Cuenta:</span> 0123-4567-89
+                          </p>
+                          <p>
+                            <span className="font-medium">CBU:</span> 0000000000000000000000000
+                          </p>
+                          <p>
+                            <span className="font-medium">Referencia:</span> Tu número de pedido
+                          </p>
+                        </div>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
                           <ShieldCheck className="h-5 w-5 text-primary" />
                         </div>
                         <div className="text-sm">
-                          <p className="font-medium">Seguro y conveniente</p>
-                          <p className="text-muted-foreground">No necesitas compartir detalles de pago en línea</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <CreditCard className="h-5 w-5 text-primary" />
-                        </div>
-                        <div className="text-sm">
-                          <p className="font-medium">Paga solo cuando recibas</p>
-                          <p className="text-muted-foreground">Inspecciona tus artículos antes de pagar</p>
+                          <p className="font-medium">Envíanos tu comprobante</p>
+                          <p className="text-muted-foreground">Envía tu comprobante de pago a pagos@opticarh.com</p>
                         </div>
                       </div>
                     </div>
